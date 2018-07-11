@@ -11,8 +11,12 @@
 #import "LoginViewController.h"
 #import "ComposeViewController.h"
 #import "Parse.h"
+#import "PostCell.h"
 
 @interface HomeViewController ()
+
+@property (nonatomic, strong) NSArray *feedPosts;
+@property (weak, nonatomic) IBOutlet UITableView *feedView;
 
 @end
 
@@ -20,12 +24,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.feedView.dataSource = self;
+    self.feedView.delegate = self;
+    
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            self.feedPosts = posts;
+            [self.feedView reloadData];
+            
+//            for (posts in self.feedPosts) {
+//                NSLog(posts);
+//            }
+        }
+        else {
+            NSLog(@"There was an error retrieving your feed.");
+            
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    
+    Post *post = self.feedPosts[indexPath.row];
+    [cell setPost:post];
+    return cell;
+    
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)feedView numberOfRowsInSection:(NSInteger)section {
+    return self.feedPosts.count;
 }
 
 /*
@@ -37,6 +79,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {

@@ -74,24 +74,43 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Qma-Bd-Kc4">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="408" id="348-en-E5r">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="408"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="450" id="348-en-E5r" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="348-en-E5r" id="q2r-NS-Cmm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="407.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="449.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXR-C8-iBV">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cXR-C8-iBV" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="375" id="Msj-Ss-tPv"/>
+                                                        <constraint firstAttribute="height" constant="375" id="xpK-BF-oOd"/>
+                                                    </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72h-ny-U76">
+                                                    <rect key="frame" x="15" y="383" width="345" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="72h-ny-U76" secondAttribute="bottom" constant="35.5" id="4lz-GN-rT4"/>
+                                                <constraint firstAttribute="trailing" secondItem="72h-ny-U76" secondAttribute="trailing" constant="15" id="F3b-r6-Yq6"/>
+                                                <constraint firstItem="cXR-C8-iBV" firstAttribute="leading" secondItem="q2r-NS-Cmm" secondAttribute="leading" id="KUS-H4-Vgh"/>
+                                                <constraint firstAttribute="trailing" secondItem="cXR-C8-iBV" secondAttribute="trailing" id="TW1-jP-QD9"/>
+                                                <constraint firstItem="72h-ny-U76" firstAttribute="top" secondItem="cXR-C8-iBV" secondAttribute="bottom" constant="8" id="VWy-n5-2hF"/>
+                                                <constraint firstItem="72h-ny-U76" firstAttribute="leading" secondItem="q2r-NS-Cmm" secondAttribute="leading" constant="15" id="mTg-Xu-Dxf"/>
+                                                <constraint firstItem="cXR-C8-iBV" firstAttribute="top" secondItem="q2r-NS-Cmm" secondAttribute="top" id="mYQ-ar-7ha"/>
+                                                <constraint firstItem="72h-ny-U76" firstAttribute="top" secondItem="cXR-C8-iBV" secondAttribute="bottom" constant="8" id="pTS-Ha-FNh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postCaption" destination="72h-ny-U76" id="Pr8-G8-M1N"/>
+                                            <outlet property="postImage" destination="cXR-C8-iBV" id="5gW-tk-zkM"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -111,6 +130,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedView" destination="AVw-t4-JQ3" id="j6d-JC-IEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTi-mx-nZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -71,6 +71,8 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
+    
+//    [self resizeImage:self.postPhoto.image withSize:<#(CGSize)#>]
     [Post postUserImage: (UIImage * _Nullable)self.postPhoto.image withCaption: (NSString * _Nullable)self.postCaptionField.text withCompletion: ^(BOOL succeeded, NSError *_Nullable error){
         if (succeeded) {
             NSLog(@"Post shared!");
@@ -79,5 +81,19 @@
         }
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 @end

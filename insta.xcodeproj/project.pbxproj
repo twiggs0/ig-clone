@@ -16,6 +16,7 @@
 		21A723F920F42B4200877993 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723F820F42B4200877993 /* HomeViewController.m */; };
 		21A723FC20F4394900877993 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723FB20F4394900877993 /* ComposeViewController.m */; };
 		21A7240120F531C800877993 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240020F531C800877993 /* Post.m */; };
+		21A7240420F56C4E00877993 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240320F56C4E00877993 /* PostCell.m */; };
 		2AA11287DB1768FA72E6D74F /* libPods-insta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		21A723FB20F4394900877993 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		21A723FF20F531C800877993 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		21A7240020F531C800877993 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		21A7240220F56C4E00877993 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		21A7240320F56C4E00877993 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-insta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0286E652A247659D58C1970 /* Pods-insta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.release.xcconfig"; path = "Pods/Target Support Files/Pods-insta/Pods-insta.release.xcconfig"; sourceTree = "<group>"; };
 		B9C2D42D19987DD76758A3C9 /* Pods-insta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-insta/Pods-insta.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,8 +77,9 @@
 		21A723E020F414F300877993 /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				21A7240520F56CC500877993 /* Views */,
 				21A723FE20F5319D00877993 /* Models */,
-				21A723FD20F5319600877993 /* Views */,
+				21A723FD20F5319600877993 /* View Controllers */,
 				21A723E120F414F300877993 /* AppDelegate.h */,
 				21A723E220F414F300877993 /* AppDelegate.m */,
 				21A723E720F414F300877993 /* Main.storyboard */,
@@ -87,7 +91,7 @@
 			path = insta;
 			sourceTree = "<group>";
 		};
-		21A723FD20F5319600877993 /* Views */ = {
+		21A723FD20F5319600877993 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				21A723FA20F4394900877993 /* ComposeViewController.h */,
@@ -97,7 +101,7 @@
 				21A723E420F414F300877993 /* LoginViewController.h */,
 				21A723E520F414F300877993 /* LoginViewController.m */,
 			);
-			path = Views;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		21A723FE20F5319D00877993 /* Models */ = {
@@ -107,6 +111,15 @@
 				21A7240020F531C800877993 /* Post.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		21A7240520F56CC500877993 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21A7240220F56C4E00877993 /* PostCell.h */,
+				21A7240320F56C4E00877993 /* PostCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		621F2A585412DC97BD21E442 /* Frameworks */ = {
@@ -202,10 +215,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-insta/Pods-insta-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -241,6 +260,7 @@
 				21A7240120F531C800877993 /* Post.m in Sources */,
 				21A723F120F414F400877993 /* main.m in Sources */,
 				21A723E320F414F300877993 /* AppDelegate.m in Sources */,
+				21A7240420F56C4E00877993 /* PostCell.m in Sources */,
 				21A723FC20F4394900877993 /* ComposeViewController.m in Sources */,
 				21A723F920F42B4200877993 /* HomeViewController.m in Sources */,
 			);

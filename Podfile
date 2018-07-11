@@ -8,4 +8,5 @@ target 'insta' do
   # Pods for insta
 
 	pod 'Parse'
+	pod 'ParseUI'
 end
