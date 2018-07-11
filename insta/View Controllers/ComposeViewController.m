@@ -64,15 +64,14 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    // imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+   // imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (IBAction)didTapShare:(id)sender {
-    
-//    [self resizeImage:self.postPhoto.image withSize:<#(CGSize)#>]
+    [self resizeImage:self.postPhoto.image withSize:CGSizeMake(250, 250)];
     [Post postUserImage: (UIImage * _Nullable)self.postPhoto.image withCaption: (NSString * _Nullable)self.postCaptionField.text withCompletion: ^(BOOL succeeded, NSError *_Nullable error){
         if (succeeded) {
             NSLog(@"Post shared!");

@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSArray *feedPosts;
 @property (weak, nonatomic) IBOutlet UITableView *feedView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -24,32 +25,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchUserPosts) forControlEvents:UIControlEventValueChanged];
+    [self.feedView insertSubview:self.refreshControl atIndex:0];
     
     self.feedView.dataSource = self;
     self.feedView.delegate = self;
     
-    // construct PFQuery
-    PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
     
-    // fetch data asynchronously
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
-        if (posts) {
-            // do something with the data fetched
-            self.feedPosts = posts;
-            [self.feedView reloadData];
-            
-//            for (posts in self.feedPosts) {
-//                NSLog(posts);
-//            }
-        }
-        else {
-            NSLog(@"There was an error retrieving your feed.");
-            
-        }
-    }];
+    [self fetchUserPosts];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +55,27 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)feedView numberOfRowsInSection:(NSInteger)section {
     return self.feedPosts.count;
+}
+
+- (void)fetchUserPosts {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            // do something with the data fetched
+            self.feedPosts = posts;
+            [self.feedView reloadData];
+        } else {
+            NSLog(@"There was an error retrieving your feed.");
+            
+        }
+        [self.refreshControl endRefreshing];
+    }];
 }
 
 /*
