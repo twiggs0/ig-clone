@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "ComposeViewController.h"
+#import "DetailViewController.h"
 #import "HomeViewController.h"
 #import "LoginViewController.h"
-#import "ComposeViewController.h"
 #import "Parse.h"
 #import "PostCell.h"
 
@@ -62,6 +63,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery includeKey:@"createdAt"];
     postQuery.limit = 20;
     
     // fetch data asynchronously
@@ -72,21 +74,20 @@
             [self.feedView reloadData];
         } else {
             NSLog(@"There was an error retrieving your feed.");
-            
         }
         [self.refreshControl endRefreshing];
     }];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    PostCell *tappedPost = sender;
+    Post *post = tappedPost.post;
+    DetailViewController *detailViewController = [segue destinationViewController];
+    detailViewController.post = post;
 }
-*/
 
 
 

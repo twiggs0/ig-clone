@@ -8,6 +8,7 @@
 
 #import "PostCell.h"
 #import "Parse.h"
+#import "DateTools.h"
 
 @implementation PostCell
 
@@ -28,7 +29,20 @@
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
     self.postCaption.text = post.caption;
+    self.postAuthorLabel.text = post.author.username;
     
+    // Format createdAt date string
+    NSDate *createdAtOriginalString = self.post.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // Configure the input format to parse the date string
+    formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
+    
+    //Convert String to timeAgo
+    NSString *timeAgoDate = [NSDate shortTimeAgoSinceDate:createdAtOriginalString];
+    self.createdAt = timeAgoDate;
+    self.timestampLabel.text = self.createdAt;
+    
+
 }
 
 @end

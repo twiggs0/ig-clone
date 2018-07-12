@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8D83F7DED957B04D00F319693822414"
+               BlueprintIdentifier = "A7E19D810EBF9E4D01F98CE23C04A896"
                BlueprintName = "Pods-insta"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-insta.a">

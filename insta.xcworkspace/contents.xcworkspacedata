@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.h">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.m">
+   </FileRef>
+   <FileRef
       location = "group:insta.xcodeproj">
    </FileRef>
    <FileRef

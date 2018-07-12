@@ -9,4 +9,5 @@ target 'insta' do
 
 	pod 'Parse'
 	pod 'ParseUI'
+	pod 'DateTools'
 end

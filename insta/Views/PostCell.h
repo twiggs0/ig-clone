@@ -14,9 +14,13 @@
 @interface PostCell : UITableViewCell
 
 @property (strong, nonatomic) Post * post;
+@property (nonatomic, strong) NSString *createdAt;
 
 @property (strong, nonatomic) IBOutlet PFImageView *postImage;
 
 @property (strong, nonatomic) IBOutlet UILabel *postCaption;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UILabel *postAuthorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
 @end

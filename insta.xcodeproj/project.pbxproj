@@ -17,6 +17,7 @@
 		21A723FC20F4394900877993 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723FB20F4394900877993 /* ComposeViewController.m */; };
 		21A7240120F531C800877993 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240020F531C800877993 /* Post.m */; };
 		21A7240420F56C4E00877993 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240320F56C4E00877993 /* PostCell.m */; };
+		21E173F520F6D878009FD427 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E173F420F6D878009FD427 /* DetailViewController.m */; };
 		2AA11287DB1768FA72E6D74F /* libPods-insta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,8 @@
 		21A7240020F531C800877993 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		21A7240220F56C4E00877993 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		21A7240320F56C4E00877993 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		21E173F320F6D877009FD427 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = "/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.h"; sourceTree = "<absolute>"; };
+		21E173F420F6D878009FD427 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = "/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.m"; sourceTree = "<absolute>"; };
 		5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-insta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0286E652A247659D58C1970 /* Pods-insta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.release.xcconfig"; path = "Pods/Target Support Files/Pods-insta/Pods-insta.release.xcconfig"; sourceTree = "<group>"; };
 		B9C2D42D19987DD76758A3C9 /* Pods-insta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-insta/Pods-insta.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 			children = (
 				21A723FA20F4394900877993 /* ComposeViewController.h */,
 				21A723FB20F4394900877993 /* ComposeViewController.m */,
+				21E173F320F6D877009FD427 /* DetailViewController.h */,
+				21E173F420F6D878009FD427 /* DetailViewController.m */,
 				21A723F720F42B4200877993 /* HomeViewController.h */,
 				21A723F820F42B4200877993 /* HomeViewController.m */,
 				21A723E420F414F300877993 /* LoginViewController.h */,
@@ -214,6 +219,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-insta/Pods-insta-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
@@ -221,6 +227,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
@@ -259,6 +266,7 @@
 				21A723E620F414F300877993 /* LoginViewController.m in Sources */,
 				21A7240120F531C800877993 /* Post.m in Sources */,
 				21A723F120F414F400877993 /* main.m in Sources */,
+				21E173F520F6D878009FD427 /* DetailViewController.m in Sources */,
 				21A723E320F414F300877993 /* AppDelegate.m in Sources */,
 				21A7240420F56C4E00877993 /* PostCell.m in Sources */,
 				21A723FC20F4394900877993 /* ComposeViewController.m in Sources */,
