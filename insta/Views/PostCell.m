@@ -28,8 +28,12 @@
     
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
+    
+    // Creates a circle frame for the profile pic
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
+    
     self.postCaption.text = post.caption;
-    self.postAuthorLabel.text = post.author.username;
+    [self.postAuthorButton setTitle:post.author.username forState:UIControlStateNormal];
     
     // Format createdAt date string
     NSDate *createdAtOriginalString = self.post.createdAt;

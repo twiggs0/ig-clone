@@ -17,7 +17,9 @@
 
 @property (nonatomic, strong) NSString *createdAt;
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postAuthorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 
 @end

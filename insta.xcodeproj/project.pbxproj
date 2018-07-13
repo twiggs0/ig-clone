@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2179561820F9522700AF4A39 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2179561720F9522700AF4A39 /* ProfileViewController.m */; };
+		2179561B20F9619300AF4A39 /* ProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2179561A20F9619300AF4A39 /* ProfileViewCell.m */; };
 		21A723E320F414F300877993 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723E220F414F300877993 /* AppDelegate.m */; };
 		21A723E620F414F300877993 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723E520F414F300877993 /* LoginViewController.m */; };
 		21A723E920F414F300877993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A723E720F414F300877993 /* Main.storyboard */; };
@@ -17,11 +19,16 @@
 		21A723FC20F4394900877993 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A723FB20F4394900877993 /* ComposeViewController.m */; };
 		21A7240120F531C800877993 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240020F531C800877993 /* Post.m */; };
 		21A7240420F56C4E00877993 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A7240320F56C4E00877993 /* PostCell.m */; };
+		21CA668720F96A2C009189B6 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 21CA668620F96A2B009189B6 /* Billabong.ttf */; };
 		21E173F520F6D878009FD427 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E173F420F6D878009FD427 /* DetailViewController.m */; };
 		2AA11287DB1768FA72E6D74F /* libPods-insta.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2179561620F9522700AF4A39 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		2179561720F9522700AF4A39 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		2179561920F9619300AF4A39 /* ProfileViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewCell.h; sourceTree = "<group>"; };
+		2179561A20F9619300AF4A39 /* ProfileViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewCell.m; sourceTree = "<group>"; };
 		21A723DE20F414F300877993 /* insta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = insta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A723E120F414F300877993 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21A723E220F414F300877993 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		21A7240020F531C800877993 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		21A7240220F56C4E00877993 /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		21A7240320F56C4E00877993 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		21CA668620F96A2B009189B6 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		21E173F320F6D877009FD427 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = "/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.h"; sourceTree = "<absolute>"; };
 		21E173F420F6D878009FD427 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = "/Users/tre/Desktop/insta/insta/View Controllers/DetailViewController.m"; sourceTree = "<absolute>"; };
 		5CFBBA0528B5E2E8C2F0EA3E /* libPods-insta.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-insta.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +88,7 @@
 		21A723E020F414F300877993 /* insta */ = {
 			isa = PBXGroup;
 			children = (
+				21CA668520F969FE009189B6 /* fonts */,
 				21A7240520F56CC500877993 /* Views */,
 				21A723FE20F5319D00877993 /* Models */,
 				21A723FD20F5319600877993 /* View Controllers */,
@@ -105,6 +114,8 @@
 				21A723F820F42B4200877993 /* HomeViewController.m */,
 				21A723E420F414F300877993 /* LoginViewController.h */,
 				21A723E520F414F300877993 /* LoginViewController.m */,
+				2179561620F9522700AF4A39 /* ProfileViewController.h */,
+				2179561720F9522700AF4A39 /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -123,8 +134,18 @@
 			children = (
 				21A7240220F56C4E00877993 /* PostCell.h */,
 				21A7240320F56C4E00877993 /* PostCell.m */,
+				2179561920F9619300AF4A39 /* ProfileViewCell.h */,
+				2179561A20F9619300AF4A39 /* ProfileViewCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		21CA668520F969FE009189B6 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				21CA668620F96A2B009189B6 /* Billabong.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 		621F2A585412DC97BD21E442 /* Frameworks */ = {
@@ -206,6 +227,7 @@
 				21A723EE20F414F400877993 /* LaunchScreen.storyboard in Resources */,
 				21A723EB20F414F400877993 /* Assets.xcassets in Resources */,
 				21A723E920F414F300877993 /* Main.storyboard in Resources */,
+				21CA668720F96A2C009189B6 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2179561B20F9619300AF4A39 /* ProfileViewCell.m in Sources */,
 				21A723E620F414F300877993 /* LoginViewController.m in Sources */,
+				2179561820F9522700AF4A39 /* ProfileViewController.m in Sources */,
 				21A7240120F531C800877993 /* Post.m in Sources */,
 				21A723F120F414F400877993 /* main.m in Sources */,
 				21E173F520F6D878009FD427 /* DetailViewController.m in Sources */,

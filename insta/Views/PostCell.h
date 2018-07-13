@@ -20,7 +20,7 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
-@property (weak, nonatomic) IBOutlet UILabel *postAuthorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UIButton *postAuthorButton;
 
 @end
