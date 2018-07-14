@@ -58,7 +58,9 @@
 
 - (void)fetchUserPosts {
     // construct PFQuery
-    PFQuery *postQuery = [Post query];
+    PFUser *user = [PFUser currentUser];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"author = %@", user];
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post" predicate:predicate];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery includeKey:@"createdAt"];
