@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "ProfileViewCell.h"
+#import "Parse.h"
 
 
 @interface ProfileViewController ()
