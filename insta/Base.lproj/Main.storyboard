@@ -439,24 +439,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MQR-mT-Vay">
-                                <rect key="frame" x="0.0" y="152" width="375" height="515"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MQR-mT-Vay">
+                                <rect key="frame" x="0.0" y="254" width="375" height="413"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Yb7-JW-CqQ">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Yb7-JW-CqQ">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileViewCell" id="wgc-oX-oJi" customClass="ProfileViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="10" y="20" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-kV-QUE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GM9-kV-QUE" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.94114847720000006" green="0.67770251879999999" blue="0.72044893229999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -478,6 +478,14 @@
                                     <constraint firstAttribute="height" constant="80" id="kdQ-em-JQZ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wk1-Ez-aHY">
+                                <rect key="frame" x="104" y="138" width="244" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Update Profile Picture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -487,7 +495,7 @@
                             <constraint firstItem="8Ac-4H-kbW" firstAttribute="leading" secondItem="n7x-4p-Njg" secondAttribute="leading" constant="8" id="C09-Ud-ijb"/>
                             <constraint firstItem="8Ac-4H-kbW" firstAttribute="top" secondItem="n7x-4p-Njg" secondAttribute="top" constant="8" id="cGa-kR-P53"/>
                             <constraint firstItem="MQR-mT-Vay" firstAttribute="bottom" secondItem="n7x-4p-Njg" secondAttribute="bottom" id="g8V-cY-fnw"/>
-                            <constraint firstItem="MQR-mT-Vay" firstAttribute="top" secondItem="8Ac-4H-kbW" secondAttribute="bottom" id="pP2-h7-CTA"/>
+                            <constraint firstItem="MQR-mT-Vay" firstAttribute="top" secondItem="8Ac-4H-kbW" secondAttribute="bottom" constant="50" id="pP2-h7-CTA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n7x-4p-Njg"/>
                     </view>

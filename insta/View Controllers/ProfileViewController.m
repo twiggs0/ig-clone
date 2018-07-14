@@ -45,7 +45,7 @@
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     ProfileViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileViewCell" forIndexPath:indexPath];
     
-    Post *post = self.feedPosts[indexPath.row];
+    Post *post = self.feedPosts[indexPath.item];
     [cell setPost:post];
     return cell;
     
